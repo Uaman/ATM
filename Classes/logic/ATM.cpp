@@ -20,7 +20,15 @@ bool ATM::checkCard(){
 }
 
 ATM::ATM():_currentAccount(Account()),_inputCardNumber(""){
+    connect(&ms,SIGNAL(signal_try_password()),SLOT(passwordChecker()));
     return;
+}
+
+void ATM::passwordChecker()
+{
+    //if(checkCard())
+    if(true)
+        ms.allowLogIn();
 }
 
 ATM::~ATM(){

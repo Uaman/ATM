@@ -6,11 +6,14 @@
 #include "FramesAndWidgets/TakingMoney.h"
 #include "../logic/ATM.h"
 #include "../logic/DataStorage.h"
+#include "FramesAndWidgets/AnotherSumFrame.h"
 #include <iostream>
 
 MenuStates::MenuStates(QWidget *parent):
     _window(new MainWindow(parent)),
-    _currentFrame(nullptr)
+    _currentFrame(nullptr),
+    _cardNumber(""),
+    _password("")
 {
     MainWindowFrame* winFr=new MainWindowFrame();
     connect(winFr,SIGNAL(signalLogInClicked()),SLOT(signalLogInClicked()));
@@ -23,8 +26,11 @@ MenuStates::MenuStates(QWidget *parent):
 
 void MenuStates::signalLogInClicked(void)
 {
+    emit signal_try_password();
+}
 
-   // checkCard();
+void MenuStates::allowLogIn()
+{
     delete _currentFrame;
     MainMenu* menu=new MainMenu();
     connect(menu,SIGNAL(signal_on_pay_clicked()),SLOT(signalPayClicked()));
@@ -53,7 +59,11 @@ void MenuStates::signalPayClicked()
 
 void MenuStates::anotherSum()
 {
-
+    delete _currentFrame;
+    AnotherSumFrame* another=new AnotherSumFrame();
+    _currentFrame=another;
+    another=0;
+    _window->addSonFrame(_currentFrame);
 }
 
 void MenuStates::takeOutSomeSum()

@@ -7,6 +7,7 @@
 using namespace std;
 typedef unsigned char  byte;
 class  ATM : public QObject{
+    Q_OBJECT
     private:
         Account _currentAccount;
         string _inputCardNumber;
@@ -14,11 +15,15 @@ class  ATM : public QObject{
         class TR_Service;
         ATM(const ATM&);
         ATM& operator=(ATM&);
+signals:
+        void signal_accept_login();
     public:
         void startATM();
         bool checkCard();
         ATM();
         ~ATM();
+public slots:
+        void passwordChecker();
 
 };
 

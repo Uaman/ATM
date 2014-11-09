@@ -12,12 +12,15 @@ class MenuStates:public QObject
 public:
     explicit MenuStates(QWidget *parent = 0);
     MainWindow* _window;
-    const std::string& cardNumber() const {return _cardNumber.toStdString();}
-    const std::string& password() const {return _password.toStdString();}
+    inline const std::string& cardNumber() const {return _cardNumber.toStdString();}
+    inline const std::string& password() const {return _password.toStdString();}
+    void allowLogIn();
+
 
     ~MenuStates();
 
 signals:
+    void signal_try_password();
 
 public slots:
     //Main window(Logining) slots

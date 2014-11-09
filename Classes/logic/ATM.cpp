@@ -13,7 +13,7 @@ bool ATM::checkCard(){
     string password = ms.password();
 
     cout<<name<<" "<<password;
-    _currentAccount = DataStorage::getAccountByCard(name,password);
+    _currentAccount = (*DataStorage::getAccountByCard(name,password));
 
     if(_currentAccount!=Account()){
         _inputCardNumber = name;

@@ -3,23 +3,28 @@
 #include <string>
 #include "Account.h"
 #include "DataStorage.h"
-#include "../GUI/MenuStates.h"
+#include "MenuStats.h"
 using namespace std;
 typedef unsigned char  byte;
-class  ATM : public QObject{
+class  ATM{
     private:
+    //	Menu menu;
+
+        /*
+            this two parameters need for working with methods from
+            DataStorage class.
+        */
         Account _currentAccount;
         string _inputCardNumber;
-        MenuStates ms;
+
         class TR_Service;
         ATM(const ATM&);
         ATM& operator=(ATM&);
     public:
         void startATM();
-        bool checkCard();
+        void checkCard();
         ATM();
         ~ATM();
-
 };
 
 

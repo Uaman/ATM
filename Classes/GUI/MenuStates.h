@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include "FramesAndWidgets/MainWindow.h"
-
 namespace Ui {
 class MainWindow;
 }
@@ -28,7 +27,8 @@ public slots:
 
     //Tacking money slots
     void takeOutSomeSum();
-
+    const std::string& cardNumber() const {return _cardNumber.toStdString();}
+    const std::string& password() const {return _password.toStdString();}
 private:
     QString _cardNumber;
     QString _password;

@@ -3,6 +3,7 @@
 #include "FramesAndWidgets/MainMenu.h"
 #include "FramesAndWidgets/MainWindow.h"
 #include "FramesAndWidgets/MainWindowFrame.h"
+#include "FramesAndWidgets/TakingMoney.h"
 
 MenuStates::MenuStates(QWidget *parent):
     _window(new MainWindow(parent)),
@@ -11,6 +12,7 @@ MenuStates::MenuStates(QWidget *parent):
     MainWindowFrame* winFr=new MainWindowFrame();
     connect(winFr,SIGNAL(signalLogInClicked()),SLOT(signalLogInClicked()));
     connect(winFr,SIGNAL(loginEntered()),SLOT(cardNumberEntered()));
+    connect(winFr,SIGNAL(passwordEntered()),SLOT(passwordEntered()));
     _currentFrame=winFr;
     winFr=0;
     _window->addSonFrame(_currentFrame);
@@ -36,8 +38,17 @@ void MenuStates::cardNumberEntered()
 void MenuStates::signalPayClicked()
 {
     delete _currentFrame;
-    _currentFrame=new MainWindowFrame();
+    TakingMoney* monyTaker=new TakingMoney();
+    _currentFrame=monyTaker;
+    monyTaker=0;
     _window->addSonFrame(_currentFrame);
+}
+
+void MenuStates::passwordEntered()
+{
+    MainWindowFrame* mFr=static_cast<MainWindowFrame*>(_currentFrame);
+    _password=mFr->getPassword();
+    mFr=0;
 }
 
 MenuStates::~MenuStates()

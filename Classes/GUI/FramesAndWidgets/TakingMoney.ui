@@ -16,7 +16,7 @@
    </font>
   </property>
   <property name="cursor">
-   <cursorShape>PointingHandCursor</cursorShape>
+   <cursorShape>ArrowCursor</cursorShape>
   </property>
   <property name="windowTitle">
    <string>Frame</string>
@@ -35,9 +35,15 @@
     <rect>
      <x>145</x>
      <y>10</y>
-     <width>131</width>
+     <width>241</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Wide Latin</family>
+     <pointsize>12</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Choose the sum</string>
@@ -46,11 +52,14 @@
   <widget class="QCommandLinkButton" name="commandLinkButton">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>30</x>
      <y>80</y>
      <width>91</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="autoFillBackground">
     <bool>true</bool>
@@ -63,6 +72,181 @@
    </property>
    <property name="icon">
     <iconset theme="sg"/>
+   </property>
+  </widget>
+  <widget class="QCommandLinkButton" name="commandLinkButton_2">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>130</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="locale">
+    <locale language="Ukrainian" country="Ukraine"/>
+   </property>
+   <property name="text">
+    <string>20</string>
+   </property>
+   <property name="icon">
+    <iconset theme="sg">
+     <normaloff/>
+    </iconset>
+   </property>
+  </widget>
+  <widget class="QCommandLinkButton" name="commandLinkButton_3">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>180</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="locale">
+    <locale language="Ukrainian" country="Ukraine"/>
+   </property>
+   <property name="text">
+    <string>50</string>
+   </property>
+   <property name="icon">
+    <iconset theme="sg">
+     <normaloff/>
+    </iconset>
+   </property>
+  </widget>
+  <widget class="QCommandLinkButton" name="commandLinkButton_4">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>80</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="locale">
+    <locale language="Ukrainian" country="Ukraine"/>
+   </property>
+   <property name="text">
+    <string>100</string>
+   </property>
+   <property name="icon">
+    <iconset theme="sg">
+     <normaloff/>
+    </iconset>
+   </property>
+  </widget>
+  <widget class="QCommandLinkButton" name="commandLinkButton_5">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>130</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="locale">
+    <locale language="Ukrainian" country="Ukraine"/>
+   </property>
+   <property name="text">
+    <string>200</string>
+   </property>
+   <property name="icon">
+    <iconset theme="sg">
+     <normaloff/>
+    </iconset>
+   </property>
+  </widget>
+  <widget class="QCommandLinkButton" name="commandLinkButton_6">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>180</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="locale">
+    <locale language="Ukrainian" country="Ukraine"/>
+   </property>
+   <property name="text">
+    <string>500</string>
+   </property>
+   <property name="icon">
+    <iconset theme="sg">
+     <normaloff/>
+    </iconset>
+   </property>
+  </widget>
+  <widget class="QCommandLinkButton" name="commandLinkButton_7">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>230</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="locale">
+    <locale language="Ukrainian" country="Ukraine"/>
+   </property>
+   <property name="text">
+    <string>Another sum</string>
+   </property>
+   <property name="icon">
+    <iconset theme="sg">
+     <normaloff/>
+    </iconset>
+   </property>
+  </widget>
+  <widget class="QCommandLinkButton" name="commandLinkButton_8">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>230</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Back</string>
    </property>
   </widget>
  </widget>

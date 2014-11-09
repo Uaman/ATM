@@ -19,10 +19,13 @@ public:
 signals:
     void signalLogInClicked(void);
     void loginEntered(void);
+    void passwordEntered(void);
 public slots:
     void on_pushButton_clicked();
 private slots:
     void on_lineEdit_editingFinished();
+
+    void on_lineEdit_2_editingFinished();
 
 private:
     Ui::MainWindowFrame *ui;

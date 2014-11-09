@@ -21,6 +21,7 @@ public slots:
     void signalLogInClicked(void);
     void signalPayClicked(void);
     void cardNumberEntered(void);
+    void passwordEntered(void);
 
 private:
     QString _cardNumber;

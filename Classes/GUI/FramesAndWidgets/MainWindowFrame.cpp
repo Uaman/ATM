@@ -25,11 +25,17 @@ const QString& MainWindowFrame::getCardNumber() const
 
 const QString& MainWindowFrame::getPassword() const
 {
-    return ui->lineEdit_2->text();
+    return _pass;
 }
 
 void MainWindowFrame::on_lineEdit_editingFinished()
 {
     _cardNumb=ui->lineEdit->text();
     emit loginEntered();
+}
+
+void MainWindowFrame::on_lineEdit_2_editingFinished()
+{
+    _pass=ui->lineEdit_2->text();
+    emit passwordEntered();
 }

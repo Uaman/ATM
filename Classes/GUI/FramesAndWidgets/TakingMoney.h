@@ -1,3 +1,5 @@
+//Developed by Dima Zvazhii
+//08.11.14
 #ifndef TAKINGMONEY_H
 #define TAKINGMONEY_H
 

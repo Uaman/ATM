@@ -1,3 +1,5 @@
+//Developed by Dima Zvazhii
+//08.11.14
 #include "MainWindowFrame.h"
 #include "ui_MainWindowFrame.h"
 
@@ -5,6 +7,7 @@ MainWindowFrame::MainWindowFrame(QWidget *parent) :
     QFrame(parent),
     ui(new Ui::MainWindowFrame)
 {
+    ui->lineEdit_2->setEchoMode(QLineEdit::Password);
     ui->setupUi(this);
 }
 

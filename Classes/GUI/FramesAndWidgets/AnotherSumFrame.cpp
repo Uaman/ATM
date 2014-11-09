@@ -1,3 +1,5 @@
+//Developed by Dima Zvazhii
+//08.11.14
 #include "AnotherSumFrame.h"
 #include "ui_AnotherSumFrame.h"
 

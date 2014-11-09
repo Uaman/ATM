@@ -1,6 +1,7 @@
 #ifndef MENUSTATES_H
 #define MENUSTATES_H
-
+//Developed by Dima Zvazhii
+//08.11.14
 #include <QMainWindow>
 #include "FramesAndWidgets/MainWindow.h"
 namespace Ui {
@@ -12,8 +13,8 @@ class MenuStates:public QObject
 public:
     explicit MenuStates(QWidget *parent = 0);
     MainWindow* _window;
-    inline const std::string& cardNumber() const {return _cardNumber.toStdString();}
-    inline const std::string& password() const {return _password.toStdString();}
+    inline const std::string cardNumber() const {return _cardNumber.toStdString();}
+    inline const std::string password() const {return _password.toStdString();}
     void allowLogIn();
 
 

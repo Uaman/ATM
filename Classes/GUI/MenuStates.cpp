@@ -1,3 +1,5 @@
+//Developed by Dima Zvazhii
+//08.11.14
 #include "qobject.h"
 #include "MenuStates.h"
 #include "FramesAndWidgets/MainMenu.h"

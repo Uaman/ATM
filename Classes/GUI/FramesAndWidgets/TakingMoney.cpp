@@ -1,3 +1,5 @@
+//Developed by Dima Zvazhii
+//08.11.14
 #include "TakingMoney.h"
 #include "ui_TakingMoney.h"
 

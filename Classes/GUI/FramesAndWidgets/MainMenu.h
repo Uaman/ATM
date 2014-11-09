@@ -1,3 +1,5 @@
+//Developed by Dima Zvazhii
+//08.11.14
 #ifndef MAINMENU_H
 #define MAINMENU_H
 

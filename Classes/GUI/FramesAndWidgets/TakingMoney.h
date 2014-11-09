@@ -14,9 +14,20 @@ class TakingMoney : public QFrame
 public:
     explicit TakingMoney(QWidget *parent = 0);
     ~TakingMoney();
+    const int& getSumToTakeOut()const;
+
+signals:
+    void takeOutMoney();
+
+
+private slots:
+    void on_commandLinkButton_clicked();
+
+    void on_commandLinkButton_2_clicked();
 
 private:
     Ui::TakingMoney *ui;
+    int _sumToTakeOut;
 };
 
 #endif // TAKINGMONEY_H

@@ -4,6 +4,7 @@
 #include "FramesAndWidgets/MainWindow.h"
 #include "FramesAndWidgets/MainWindowFrame.h"
 #include "FramesAndWidgets/TakingMoney.h"
+#include <iostream>
 
 MenuStates::MenuStates(QWidget *parent):
     _window(new MainWindow(parent)),
@@ -39,9 +40,18 @@ void MenuStates::signalPayClicked()
 {
     delete _currentFrame;
     TakingMoney* monyTaker=new TakingMoney();
+    connect(monyTaker,SIGNAL(takeOutMoney()),SLOT(takeOutSomeSum()));
     _currentFrame=monyTaker;
     monyTaker=0;
     _window->addSonFrame(_currentFrame);
+}
+
+void MenuStates::takeOutSomeSum()
+{
+    //you can receive the sum from
+    TakingMoney* monyTaker=static_cast<TakingMoney*>(_currentFrame);
+    /*here it is*/monyTaker->getSumToTakeOut();
+    monyTaker=0;
 }
 
 void MenuStates::passwordEntered()

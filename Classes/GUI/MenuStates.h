@@ -18,10 +18,16 @@ public:
 signals:
 
 public slots:
+    //Main window(Logining) slots
     void signalLogInClicked(void);
-    void signalPayClicked(void);
     void cardNumberEntered(void);
     void passwordEntered(void);
+
+    //Main menu slots
+    void signalPayClicked(void);
+
+    //Tacking money slots
+    void takeOutSomeSum();
 
 private:
     QString _cardNumber;

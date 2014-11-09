@@ -19,11 +19,9 @@ SOURCES += \
     Classes/GUI/FramesAndWidgets/MainWindowFrame.cpp \
     Classes/GUI/FramesAndWidgets/TakingMoney.cpp \
     Classes/logic/Account.cpp \
-    Classes/logic/Action.cpp \
     Classes/logic/ATM.cpp \
     Classes/logic/Card.cpp \
     Classes/logic/DataStorage.cpp \
-    Classes/logic/main.cpp \
     Classes/logic/MD5.cpp
 
 
@@ -34,7 +32,6 @@ HEADERS += \
     Classes/GUI/FramesAndWidgets/MainWindowFrame.h \
     Classes/GUI/FramesAndWidgets/TakingMoney.h \
     Classes/logic/Account.h \
-    Classes/logic/Action.h \
     Classes/logic/ATM.h \
     Classes/logic/Card.h \
     Classes/logic/DataStorage.h \

@@ -10,8 +10,19 @@
     <height>281</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Franklin Gothic Medium</family>
+   </font>
+  </property>
+  <property name="cursor">
+   <cursorShape>PointingHandCursor</cursorShape>
+  </property>
   <property name="windowTitle">
    <string>Frame</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::RightToLeft</enum>
   </property>
   <property name="frameShape">
    <enum>QFrame::StyledPanel</enum>
@@ -30,6 +41,28 @@
    </property>
    <property name="text">
     <string>Choose the sum</string>
+   </property>
+  </widget>
+  <widget class="QCommandLinkButton" name="commandLinkButton">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>80</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="locale">
+    <locale language="Ukrainian" country="Ukraine"/>
+   </property>
+   <property name="text">
+    <string>10</string>
+   </property>
+   <property name="icon">
+    <iconset theme="sg"/>
    </property>
   </widget>
  </widget>

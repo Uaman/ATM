@@ -11,14 +11,24 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = ATM
 TEMPLATE = app
 
+SOURCES += \
+    Classes/GUI/MenuStates.cpp \
+    Classes/main.cpp \
+    Classes/GUI/FramesAndWidgets/MainWindow.cpp \
+    Classes/GUI/FramesAndWidgets/MainMenu.cpp \
+    Classes/GUI/FramesAndWidgets/MainWindowFrame.cpp \
+    Classes/GUI/FramesAndWidgets/TakingMoney.cpp
 
-SOURCES += main.cpp\
-        MainWindow.cpp \
-    MainMenu.cpp
+HEADERS += \
+    Classes/GUI/MenuStates.h \
+    Classes/GUI/FramesAndWidgets/MainWindow.h \
+    Classes/GUI/FramesAndWidgets/MainMenu.h \
+    Classes/GUI/FramesAndWidgets/MainWindowFrame.h \
+    Classes/GUI/FramesAndWidgets/TakingMoney.h
 
-HEADERS  += MainWindow.h \
-    MainMenu.h
+FORMS += \
+    Classes/GUI/FramesAndWidgets/MainWindow.ui \
+    Classes/GUI/FramesAndWidgets/MainMenu.ui \
+    Classes/GUI/FramesAndWidgets/MainWindowFrame.ui \
+    Classes/GUI/FramesAndWidgets/TakingMoney.ui
 
-FORMS    += \
-    MainWindow.ui \
-    MainMenu.ui

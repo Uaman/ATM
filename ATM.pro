@@ -26,6 +26,7 @@ SOURCES += \
     Classes/logic/main.cpp \
     Classes/logic/MD5.cpp
 
+
 HEADERS += \
     Classes/GUI/MenuStates.h \
     Classes/GUI/FramesAndWidgets/MainWindow.h \
@@ -37,11 +38,13 @@ HEADERS += \
     Classes/logic/ATM.h \
     Classes/logic/Card.h \
     Classes/logic/DataStorage.h \
-    Classes/logic/MD5.h
+    Classes/logic/MD5.h \
+    Classes/logic/BankData.h
 
 FORMS += \
     Classes/GUI/FramesAndWidgets/MainWindow.ui \
     Classes/GUI/FramesAndWidgets/MainMenu.ui \
     Classes/GUI/FramesAndWidgets/MainWindowFrame.ui \
     Classes/GUI/FramesAndWidgets/TakingMoney.ui
+
 

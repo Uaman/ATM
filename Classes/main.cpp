@@ -1,6 +1,5 @@
 #include "GUI/FramesAndWidgets/MainWindow.h"
 #include "GUI/FramesAndWidgets/MainMenu.h"
-#include "GUI/FramesAndWidgets/MenuAmount.h"
 #include "GUI/MenuStates.h"
 #include <QApplication>
 using namespace std;

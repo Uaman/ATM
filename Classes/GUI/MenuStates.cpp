@@ -4,6 +4,8 @@
 #include "FramesAndWidgets/MainWindow.h"
 #include "FramesAndWidgets/MainWindowFrame.h"
 #include "FramesAndWidgets/TakingMoney.h"
+#include "../logic/ATM.h"
+#include "../logic/DataStorage.h"
 #include <iostream>
 
 MenuStates::MenuStates(QWidget *parent):
@@ -21,6 +23,8 @@ MenuStates::MenuStates(QWidget *parent):
 
 void MenuStates::signalLogInClicked(void)
 {
+
+   // checkCard();
     delete _currentFrame;
     MainMenu* menu=new MainMenu();
     connect(menu,SIGNAL(signal_on_pay_clicked()),SLOT(signalPayClicked()));

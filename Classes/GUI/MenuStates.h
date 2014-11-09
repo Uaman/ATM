@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include "FramesAndWidgets/MainWindow.h"
-
 namespace Ui {
 class MainWindow;
 }
@@ -13,6 +12,9 @@ class MenuStates:public QObject
 public:
     explicit MenuStates(QWidget *parent = 0);
     MainWindow* _window;
+    const std::string& cardNumber() const {return _cardNumber.toStdString();}
+    const std::string& password() const {return _password.toStdString();}
+
     ~MenuStates();
 
 signals:
@@ -29,6 +31,8 @@ public slots:
     //Tacking money slots
     void takeOutSomeSum();
     void anotherSum();
+
+
 
 private:
     QString _cardNumber;

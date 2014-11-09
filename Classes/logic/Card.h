@@ -1,3 +1,4 @@
+//developed by Lysenko Vladyslav
 #pragma once;
 #include <string>
 #include <iostream>

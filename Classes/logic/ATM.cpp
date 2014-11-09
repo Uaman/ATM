@@ -1,3 +1,4 @@
+//developed by Lysenko Vladyslav
 #include "ATM.h"
 
 //ATM
@@ -10,6 +11,8 @@ void ATM::startATM(){
 bool ATM::checkCard(){
     string name =  ms.cardNumber();
     string password = ms.password();
+
+    cout<<name<<" "<<password;
     _currentAccount = DataStorage::getAccountByCard(name,password);
 
     if(_currentAccount!=Account()){
@@ -26,8 +29,8 @@ ATM::ATM():_currentAccount(Account()),_inputCardNumber(""){
 
 void ATM::passwordChecker()
 {
-    //if(checkCard())
-    if(true)
+    if(checkCard())
+   // if(true)
         ms.allowLogIn();
 }
 

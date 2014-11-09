@@ -1,3 +1,4 @@
+//developed by Lysenko Vladyslav
 #include "Account.h"
 int Account::_FreeId=0;
 Account::Account(const  string& name, const  string& sername, const  string& bDate):_name(name),

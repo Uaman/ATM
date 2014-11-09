@@ -1,3 +1,4 @@
+//developed by Lysenko Vladyslav
 #pragma once;
 #include <iostream>
 #include <vector>
@@ -20,7 +21,7 @@ class DataStorage{
                 static DataStorage theSingleInstance;*/
             return _instance;
         }
-        static const Account& getAccountByCard(const string& number,const string& password);
+        static const Account* getAccountByCard(const string& number,const string& password);
         static void putMoney(const Account& ac,const string&  number, double  amount);
         static void withdrawMoney(const Account& ac, const string&  number,const double& amount);
         static void addCard(const Account& ac,const string&  number, const string& pin);

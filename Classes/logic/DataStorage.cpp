@@ -1,3 +1,4 @@
+//developed by Lysenko Vladyslav
 #include "DataStorage.h"
 
 DataStorage DataStorage::_instance;
@@ -81,14 +82,16 @@ void DataStorage::withdrawMoney(const Account& ac,const string&  number,const do
     }
 }
 
-const Account&  DataStorage::getAccountByCard(const string &number,const string& password){
+//TODO
+const Account*  DataStorage::getAccountByCard(const string &number,const string& password){
     for(int i=0;i<DataStorage::_data.accounts().size();i++){
         for(int j=0;j<DataStorage::_data.accounts()[i].cards().size();j++){
             if((DataStorage::_data.accounts()[i].cards()[j].number()==number)&&(DataStorage::_data.accounts()[i].cards()[j].password()==md5(password)))
                 return DataStorage::_data.accounts()[i];
         }
     }
-    return Account();
+
+    return new Account();
 }
 
 void DataStorage::setExcessFunds(const Account& ac,const string& number){

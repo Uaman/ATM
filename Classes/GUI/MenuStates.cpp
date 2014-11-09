@@ -41,9 +41,15 @@ void MenuStates::signalPayClicked()
     delete _currentFrame;
     TakingMoney* monyTaker=new TakingMoney();
     connect(monyTaker,SIGNAL(takeOutMoney()),SLOT(takeOutSomeSum()));
+    connect(monyTaker,SIGNAL(anotherSum()),SLOT(anotherSum()));
     _currentFrame=monyTaker;
     monyTaker=0;
     _window->addSonFrame(_currentFrame);
+}
+
+void MenuStates::anotherSum()
+{
+
 }
 
 void MenuStates::takeOutSomeSum()

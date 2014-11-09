@@ -22,7 +22,8 @@ SOURCES += \
     Classes/logic/ATM.cpp \
     Classes/logic/Card.cpp \
     Classes/logic/DataStorage.cpp \
-    Classes/logic/MD5.cpp
+    Classes/logic/MD5.cpp \
+    Classes/GUI/FramesAndWidgets/AnotherSumFrame.cpp
 
 
 HEADERS += \
@@ -36,12 +37,14 @@ HEADERS += \
     Classes/logic/Card.h \
     Classes/logic/DataStorage.h \
     Classes/logic/MD5.h \
-    Classes/logic/BankData.h
+    Classes/logic/BankData.h \
+    Classes/GUI/FramesAndWidgets/AnotherSumFrame.h
 
 FORMS += \
     Classes/GUI/FramesAndWidgets/MainWindow.ui \
     Classes/GUI/FramesAndWidgets/MainMenu.ui \
     Classes/GUI/FramesAndWidgets/MainWindowFrame.ui \
-    Classes/GUI/FramesAndWidgets/TakingMoney.ui
+    Classes/GUI/FramesAndWidgets/TakingMoney.ui \
+    Classes/GUI/FramesAndWidgets/AnotherSumFrame.ui
 
 

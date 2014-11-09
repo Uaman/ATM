@@ -31,3 +31,37 @@ void TakingMoney::on_commandLinkButton_2_clicked()
     _sumToTakeOut=20;
     emit takeOutMoney();
 }
+
+void TakingMoney::on_commandLinkButton_3_clicked()
+{
+    _sumToTakeOut=50;
+    emit takeOutMoney();
+}
+
+void TakingMoney::on_commandLinkButton_4_clicked()
+{
+    _sumToTakeOut=100;
+    emit takeOutMoney();
+}
+
+void TakingMoney::on_commandLinkButton_5_clicked()
+{
+    _sumToTakeOut=200;
+    emit takeOutMoney();
+}
+
+void TakingMoney::on_commandLinkButton_6_clicked()
+{
+    _sumToTakeOut=500;
+    emit takeOutMoney();
+}
+
+void TakingMoney::on_commandLinkButton_7_clicked()
+{
+    emit anotherSum();
+}
+
+void TakingMoney::on_commandLinkButton_8_clicked()
+{
+
+}

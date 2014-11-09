@@ -28,6 +28,7 @@ public slots:
 
     //Tacking money slots
     void takeOutSomeSum();
+    void anotherSum();
 
 private:
     QString _cardNumber;

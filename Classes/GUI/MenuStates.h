@@ -20,9 +20,11 @@ signals:
 public slots:
     void signalLogInClicked(void);
     void signalPayClicked(void);
+    void cardNumberEntered(void);
 
 private:
-
+    QString _cardNumber;
+    QString _password;
     QFrame* _currentFrame;
 
 };

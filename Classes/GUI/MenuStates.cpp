@@ -10,14 +10,11 @@ MenuStates::MenuStates(QWidget *parent):
 {
     MainWindowFrame* winFr=new MainWindowFrame();
     connect(winFr,SIGNAL(signalLogInClicked()),SLOT(signalLogInClicked()));
+    connect(winFr,SIGNAL(loginEntered()),SLOT(cardNumberEntered()));
     _currentFrame=winFr;
     winFr=0;
     _window->addSonFrame(_currentFrame);
 }
-
-
-
-
 
 void MenuStates::signalLogInClicked(void)
 {
@@ -27,6 +24,13 @@ void MenuStates::signalLogInClicked(void)
     _currentFrame=menu;
     menu=0;
     _window->addSonFrame(_currentFrame);
+}
+
+void MenuStates::cardNumberEntered()
+{
+    MainWindowFrame* mFr=static_cast<MainWindowFrame*>(_currentFrame);
+    _cardNumber=mFr->getCardNumber();
+    mFr=0;
 }
 
 void MenuStates::signalPayClicked()

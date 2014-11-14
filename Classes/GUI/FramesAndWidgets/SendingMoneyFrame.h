@@ -31,6 +31,12 @@ private slots:
     //edit Line
     void editLine();
 
+    //clear Line
+    void clearLine();
+
+    //clearing the last character
+    void clearLast();
+
     void on_pushButton_2_clicked();
 
     void on_commandLinkButton_clicked();
@@ -52,6 +58,10 @@ private slots:
     void on_pushButton_10_clicked();
 
     void on_pushButton_13_clicked();
+
+    void on_pushButton_12_clicked();
+
+    void on_pushButton_11_clicked();
 
 private:
     Ui::SendingMoneyFrame *ui;

@@ -131,3 +131,39 @@ void SendingMoneyFrame::on_pushButton_13_clicked()
     _st="0";
     editLine();
 }
+
+//press AC
+void SendingMoneyFrame::on_pushButton_12_clicked()
+{
+    clearLine();
+}
+
+//clear line
+void SendingMoneyFrame::clearLine()
+{
+    if(_flag==true)
+    {
+        _cardNumber->setText("");
+    }else _password->setText("");
+}
+
+//press <-
+void SendingMoneyFrame::on_pushButton_11_clicked()
+{
+    clearLast();
+}
+
+
+//clearing the last character
+void SendingMoneyFrame::clearLast()
+{
+    MyEditLine* worker=nullptr;
+    if(_flag==true)
+    {
+        worker=_cardNumber;
+    }else worker=_password;
+    QString string=worker->text();
+    string.chop(1);
+    worker->setText(string);
+    worker=0;
+}

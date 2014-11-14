@@ -22,10 +22,14 @@ class DataStorage{
             return _instance;
         }
 
+        static const double& getMoney(const Account& ac,const string&  number);
+
         static const Account* getAccountByCard(const string& number,const string& password);
         static void putMoney(const Account& ac,const string&  number, double  amount);
         static void withdrawMoney(const Account& ac, const string&  number,const double& amount);
         static void addCard(const Account& ac,const string&  number, const string& pin);
-        static void setExcessFunds(const Account& ac,const string&);
-        static   const BankData& getAll(){return DataStorage::_data;}
+        //static   const BankData& getAll(){return DataStorage::_data;}
+
+
+
 };

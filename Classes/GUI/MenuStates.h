@@ -24,6 +24,9 @@ signals:
     void signal_try_password();
 
 public slots:
+    //Base window
+    void closingWindow();
+
     //Main window(Logining) slots
     void signalLogInClicked(void);
     void cardNumberEntered(void);
@@ -31,11 +34,19 @@ public slots:
 
     //Main menu slots
     void signalPayClicked(void);
+    void balanceOnScreen(void);
+    void onSendingMoney(void);
 
     //Tacking money slots
     void takeOutSomeSum();
     void anotherSum();
+    void backToMainMenu();
 
+    //Sending money slots
+
+
+    //AnotherSumFrame slots
+    void backOnTakingMoneyWindow();
 
 
 private:

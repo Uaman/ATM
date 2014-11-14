@@ -23,7 +23,10 @@ SOURCES += \
     Classes/logic/Card.cpp \
     Classes/logic/DataStorage.cpp \
     Classes/logic/MD5.cpp \
-    Classes/GUI/FramesAndWidgets/AnotherSumFrame.cpp
+    Classes/GUI/FramesAndWidgets/AnotherSumFrame.cpp \
+    Classes/GUI/FramesAndWidgets/MoneyOnScreenFrame.cpp \
+    Classes/GUI/FramesAndWidgets/SendingMoneyFrame.cpp \
+    Classes/GUI/FramesAndWidgets/MyEditLine.cpp
 
 
 HEADERS += \
@@ -38,13 +41,18 @@ HEADERS += \
     Classes/logic/DataStorage.h \
     Classes/logic/MD5.h \
     Classes/logic/BankData.h \
-    Classes/GUI/FramesAndWidgets/AnotherSumFrame.h
+    Classes/GUI/FramesAndWidgets/AnotherSumFrame.h \
+    Classes/GUI/FramesAndWidgets/MoneyOnScreenFrame.h \
+    Classes/GUI/FramesAndWidgets/SendingMoneyFrame.h \
+    Classes/GUI/FramesAndWidgets/MyEditLine.h
 
 FORMS += \
     Classes/GUI/FramesAndWidgets/MainWindow.ui \
     Classes/GUI/FramesAndWidgets/MainMenu.ui \
     Classes/GUI/FramesAndWidgets/MainWindowFrame.ui \
     Classes/GUI/FramesAndWidgets/TakingMoney.ui \
-    Classes/GUI/FramesAndWidgets/AnotherSumFrame.ui
+    Classes/GUI/FramesAndWidgets/AnotherSumFrame.ui \
+    Classes/GUI/FramesAndWidgets/MoneyOnScreenFrame.ui \
+    Classes/GUI/FramesAndWidgets/SendingMoneyFrame.ui
 
 

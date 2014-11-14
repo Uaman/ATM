@@ -14,3 +14,9 @@ AnotherSumFrame::~AnotherSumFrame()
 {
     delete ui;
 }
+
+//emits singal for going back on TakingMoneyWindow
+void AnotherSumFrame::on_commandLinkButton_clicked()
+{
+    emit signalBackOnTackingMoneyFrame();
+}

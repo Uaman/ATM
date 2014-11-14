@@ -1,3 +1,4 @@
+//developed by Lysenko Vladyslav
 #include "Card.h"
 
 Card::Card():_number(""),_password(""){

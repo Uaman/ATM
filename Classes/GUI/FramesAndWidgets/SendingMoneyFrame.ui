@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>AnotherSumFrame</class>
- <widget class="QFrame" name="AnotherSumFrame">
+ <class>SendingMoneyFrame</class>
+ <widget class="QFrame" name="SendingMoneyFrame">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>461</width>
+    <height>281</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,11 +19,68 @@
   <property name="frameShadow">
    <enum>QFrame::Raised</enum>
   </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>20</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Wide Latin</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Sending money</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>80</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Franklin Gothic Medium</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Card number</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>150</y>
+     <width>46</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Franklin Gothic Medium</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Sum</string>
+   </property>
+  </widget>
   <widget class="QPushButton" name="pushButton_10">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>170</y>
+     <x>380</x>
+     <y>150</y>
      <width>31</width>
      <height>31</height>
     </rect>
@@ -43,8 +100,8 @@
   <widget class="QPushButton" name="pushButton_11">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>200</y>
+     <x>320</x>
+     <y>180</y>
      <width>31</width>
      <height>31</height>
     </rect>
@@ -64,8 +121,8 @@
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>110</y>
+     <x>320</x>
+     <y>90</y>
      <width>31</width>
      <height>31</height>
     </rect>
@@ -85,8 +142,8 @@
   <widget class="QPushButton" name="pushButton_12">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>200</y>
+     <x>380</x>
+     <y>180</y>
      <width>31</width>
      <height>31</height>
     </rect>
@@ -106,8 +163,8 @@
   <widget class="QPushButton" name="pushButton_13">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>200</y>
+     <x>350</x>
+     <y>180</y>
      <width>31</width>
      <height>31</height>
     </rect>
@@ -127,8 +184,8 @@
   <widget class="QPushButton" name="pushButton_8">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>170</y>
+     <x>320</x>
+     <y>150</y>
      <width>31</width>
      <height>31</height>
     </rect>
@@ -148,8 +205,8 @@
   <widget class="QPushButton" name="pushButton_5">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>110</y>
+     <x>380</x>
+     <y>90</y>
      <width>31</width>
      <height>31</height>
     </rect>
@@ -169,8 +226,8 @@
   <widget class="QPushButton" name="pushButton_9">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>170</y>
+     <x>350</x>
+     <y>150</y>
      <width>31</width>
      <height>31</height>
     </rect>
@@ -190,8 +247,8 @@
   <widget class="QPushButton" name="pushButton_6">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>140</y>
+     <x>350</x>
+     <y>120</y>
      <width>31</width>
      <height>31</height>
     </rect>
@@ -211,8 +268,8 @@
   <widget class="QPushButton" name="pushButton_7">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>140</y>
+     <x>380</x>
+     <y>120</y>
      <width>31</width>
      <height>31</height>
     </rect>
@@ -232,8 +289,8 @@
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>110</y>
+     <x>350</x>
+     <y>90</y>
      <width>31</width>
      <height>31</height>
     </rect>
@@ -253,8 +310,8 @@
   <widget class="QPushButton" name="pushButton_4">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>140</y>
+     <x>320</x>
+     <y>120</y>
      <width>31</width>
      <height>31</height>
     </rect>
@@ -271,57 +328,14 @@
     <string>4</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>20</y>
-     <width>251</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Franklin Gothic Medium</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Please enter your own sum</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>110</y>
-     <width>161</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Trajan Pro</family>
-     <pointsize>14</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>190</y>
+     <x>210</x>
+     <y>220</y>
      <width>71</width>
      <height>41</height>
     </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Franklin Gothic Medium</family>
-     <pointsize>10</pointsize>
-    </font>
    </property>
    <property name="text">
     <string>Ok</string>
@@ -331,8 +345,8 @@
    <property name="geometry">
     <rect>
      <x>90</x>
-     <y>190</y>
-     <width>71</width>
+     <y>220</y>
+     <width>81</width>
      <height>41</height>
     </rect>
    </property>

@@ -16,6 +16,11 @@ class AnotherSumFrame : public QFrame
 public:
     explicit AnotherSumFrame(QWidget *parent = 0);
     ~AnotherSumFrame();
+signals:
+    void signalBackOnTackingMoneyFrame();
+
+private slots:
+    void on_commandLinkButton_clicked();
 
 private:
     Ui::AnotherSumFrame *ui;

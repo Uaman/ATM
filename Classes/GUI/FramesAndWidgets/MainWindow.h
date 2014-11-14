@@ -18,6 +18,8 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     void addSonFrame(QFrame*);
     ~MainWindow();
+signals:
+    void closeWindow();
 
 private slots:
     void on_pushButton_2_clicked();

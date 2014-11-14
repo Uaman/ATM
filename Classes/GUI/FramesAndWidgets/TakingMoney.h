@@ -21,6 +21,7 @@ public:
 signals:
     void takeOutMoney();
     void anotherSum();
+    void signalBack();
 
 private slots:
     void on_commandLinkButton_clicked();

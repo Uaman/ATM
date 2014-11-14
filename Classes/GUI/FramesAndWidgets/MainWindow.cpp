@@ -37,5 +37,5 @@ void MainWindow::addSonFrame(QFrame *son)
 
 void MainWindow::on_pushButton_clicked()
 {
-    //MenuStates::~MenuStates();
+    emit closeWindow();
 }

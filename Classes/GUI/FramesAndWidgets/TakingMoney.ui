@@ -71,7 +71,9 @@
     <string>10</string>
    </property>
    <property name="icon">
-    <iconset theme="sg"/>
+    <iconset theme="sg">
+     <normaloff/>
+    </iconset>
    </property>
   </widget>
   <widget class="QCommandLinkButton" name="commandLinkButton_2">

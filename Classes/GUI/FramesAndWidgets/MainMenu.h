@@ -19,9 +19,15 @@ public:
 
 signals:
     void signal_on_pay_clicked(void);
+    void singal_balance_on_screen(void);
+    void signal_sending_money(void);
 
 private slots:
     void on_commandLinkButton_clicked();
+
+    void on_commandLinkButton_4_clicked();
+
+    void on_commandLinkButton_2_clicked();
 
 private:
     Ui::MainMenu *ui;

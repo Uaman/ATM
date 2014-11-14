@@ -65,5 +65,5 @@ void TakingMoney::on_commandLinkButton_7_clicked()
 
 void TakingMoney::on_commandLinkButton_8_clicked()
 {
-
+    emit signalBack();
 }

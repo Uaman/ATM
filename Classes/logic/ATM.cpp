@@ -38,6 +38,9 @@ void ATM::passwordChecker()
     if(checkCard())
     //if(true)
         ms.allowLogIn();
+    else{
+        QMessageBox::critical(0, "Log in error", "Incorrect card number or password!");
+    }
 }
 
 ATM::~ATM(){

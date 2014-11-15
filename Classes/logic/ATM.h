@@ -7,6 +7,7 @@
 #include "Bank.h"
 #include "Operation.h"
 #include "../GUI/MenuStates.h"
+#include <QMessageBox>
 using namespace std;
 typedef unsigned char  byte;
 class  ATM : public QObject{

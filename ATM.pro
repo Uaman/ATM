@@ -26,7 +26,9 @@ SOURCES += \
     Classes/GUI/FramesAndWidgets/AnotherSumFrame.cpp \
     Classes/GUI/FramesAndWidgets/MoneyOnScreenFrame.cpp \
     Classes/GUI/FramesAndWidgets/SendingMoneyFrame.cpp \
-    Classes/GUI/FramesAndWidgets/MyEditLine.cpp
+    Classes/GUI/FramesAndWidgets/MyEditLine.cpp \
+    Classes/logic/Bank.cpp \
+    Classes/logic/Operation.cpp
 
 
 HEADERS += \
@@ -44,7 +46,9 @@ HEADERS += \
     Classes/GUI/FramesAndWidgets/AnotherSumFrame.h \
     Classes/GUI/FramesAndWidgets/MoneyOnScreenFrame.h \
     Classes/GUI/FramesAndWidgets/SendingMoneyFrame.h \
-    Classes/GUI/FramesAndWidgets/MyEditLine.h
+    Classes/GUI/FramesAndWidgets/MyEditLine.h \
+    Classes/logic/Bank.h \
+    Classes/logic/Operation.h
 
 FORMS += \
     Classes/GUI/FramesAndWidgets/MainWindow.ui \

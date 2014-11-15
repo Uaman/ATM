@@ -6,7 +6,6 @@ void ATM::startATM(){
     DataStorage::initATM();
     ms._window->show();
     //method creates and opens main menu
-
 }
 bool ATM::checkCard(){
     string name =  ms.cardNumber();
@@ -17,6 +16,13 @@ bool ATM::checkCard(){
 
     if(_currentAccount!=Account()){
         _inputCardNumber = name;
+
+      /*  getAmount();
+        withdrawMoney();
+        getAmount();
+        sendMoney();
+        cout<<"After: "<<DataStorage::getMoney(DataStorage::getAccountByCardNumber("4327463724623746")
+                              ,"4327463724623746");*/
          return true;
     }
     return false;
@@ -29,8 +35,8 @@ ATM::ATM():_currentAccount(Account()),_inputCardNumber(""){
 
 void ATM::passwordChecker()
 {
-    //if(checkCard())
-    if(true)
+    if(checkCard())
+    //if(true)
         ms.allowLogIn();
 }
 
@@ -38,55 +44,25 @@ ATM::~ATM(){
     return;
 }
 
-//TR_Service
-
-ATM::TR_Service::TR_Service(){
-    //?
-    return;
-}
-ATM::TR_Service::~TR_Service(){
-    //?
-    return;
+//
+void ATM::getAmount(){
+   Operation op(_currentAccount,_inputCardNumber,"",0);
+   cout<<"amount = "<<Bank::getAmoundByCard(op)<<endl;
 }
 
-//Transaction
-
-ATM::TR_Service::Transaction::Transaction(const  byte& operCode,const double& amount, const string& date, const Account& from, const Account& to):
-    _operCode(operCode), _amount(amount),_date(date),_from(from),_to(to){
-        return;
-}
-ATM::TR_Service::Transaction::~Transaction(){
-    return;
+void ATM::withdrawMoney(){
+    //amount from input
+    double amount=10;
+    Bank::withdrawAmoundFromCard(Operation(_currentAccount,_inputCardNumber,"",amount));
 }
 
-/*//testing
-DataStorage::addCard(_currentAccount,"1780033889965431","8657");
-DataStorage::setExcessFunds(_currentAccount,"1780033889965431");
-DataStorage::putMoney(_currentAccount,"1334234234342212",46686);
-DataStorage::putMoney(_currentAccount,"1780033889965431",100);
-DataStorage::withdrawMoney(_currentAccount,"1334234234342212",1120);
-DataStorage::putMoney(_currentAccount,"4984654351484864",1120);
-
-//showing all accounts
-BankData data = DataStorage::getAll();
-vector<Account> vectAcc =data.accounts();
-vector<Account>::iterator Iter;
-for ( Iter = vectAcc.begin( ) ; Iter != vectAcc.end( ) ; Iter++ ){
-    (*Iter).show();
-    cout<<endl;
+void ATM::sendMoney(){
+    //amount and card number from input
+    double amount=10;
+    string to = "4327463724623746";
+    Bank::sendMoney(Operation(_currentAccount,_inputCardNumber,to,amount));
 }
 
-//showing all amounts
-BankData data1 = DataStorage::getAll();
-auto it = data1.cardToAmount().begin();
- while (it != data1.cardToAmount().end()) {
-    cout << (*it).first << ": "
-         << (*it).second << endl;
-    ++it;
- }
- cout<<endl;
- //getting amount of current card
- cout<<_inputCardNumber<<" : "<<data1.cardToAmount().find(_inputCardNumber)->second<<endl;
- //getting number of excess card of current account
- cout<<"excess card: "<<DataStorage::getAll().accountIdToExcessCard().find(_currentAccount.pointId())->second ;
- */
+
+
+

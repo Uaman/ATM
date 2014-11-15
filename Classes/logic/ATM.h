@@ -4,16 +4,19 @@
 #include <string>
 #include "Account.h"
 #include "DataStorage.h"
+#include "Bank.h"
+#include "Operation.h"
 #include "../GUI/MenuStates.h"
 using namespace std;
 typedef unsigned char  byte;
 class  ATM : public QObject{
     Q_OBJECT
+    friend class Bank;
     private:
         Account _currentAccount;
         string _inputCardNumber;
         MenuStates ms;
-        class TR_Service;
+        //class Operation;
         ATM(const ATM&);
         ATM& operator=(ATM&);
 signals:
@@ -23,36 +26,25 @@ signals:
         bool checkCard();
         ATM();
         ~ATM();
+        void getAmount();
+        void withdrawMoney();
+        void sendMoney();
 public slots:
         void passwordChecker();
 
 };
 
-
-class  ATM::TR_Service{
-    private:
-        class Transaction;
-        //Action action;
-        const Transaction& createTransaction();
-        void doOper(const Transaction& transaction);
-        TR_Service(const TR_Service&);
-        TR_Service& operator=( const TR_Service&);
-    public:
-        TR_Service();
-        ~TR_Service();
- };
+//class  ATM::Operation{
+//       private:
+//         double _amount;
+//         Account _accountFrom;
+//         string _numberFrom , _numberTo;
+//         Operation(const Operation&);
+//         Operation& operator=(const Operation&);
+//         ~Operation();
+//       public:
+//         Operation(Account&,const string&,const string&,const double& );
+//  };
 
 
-class  ATM::TR_Service::Transaction{
-    friend class Operation;
-    private:
-        byte _operCode;
-        string _date;
-        double _amount;
-        Account _from , _to;
-        Transaction(const Transaction&);
-        Transaction& operator=(const Transaction&);
-    public:
-        Transaction(const  byte&,const double& , const string&, const Account&, const Account&);
-        ~Transaction();
-};
+

@@ -14,8 +14,9 @@ void DataStorage::initATM(){
     _data.accounts().back().insertCard("4984654351484864",md5("5768"));
     _data.accounts().back().insertCard("1218998165132318",md5("3201"));
 
-    DataStorage::getMoney(ac,"1234567890123651");
-    _data.cardToAmount().insert(pair<string,int>("1234567890123651",0));
+   // DataStorage::getMoney(ac,"1234567890123651");
+    _data.cardToAmount().insert(pair<string,int>("1234567890123651",1500));
+   //  _data.cardToAmount().insert(pair<string,int>("1234567890123651",0));
     _data.cardToAmount().insert(pair<string,int>("4984654351484864",0));
     _data.cardToAmount().insert(pair<string,int>("1218998165132318",0));
 
@@ -67,19 +68,25 @@ void DataStorage::putMoney(const Account& ac,const string&  number, double  amou
         }
     }
 }
-void DataStorage::withdrawMoney(const Account& ac,const string&  number,const double& amount){
+bool DataStorage::withdrawMoney(const Account& ac,const string&  number,const double& amount){
     for(int i=0;i<DataStorage::_data.accounts().size();i++){
         if(DataStorage::_data.accounts()[i]==ac){
             //DataStorage::_data.cardToAmount().find(number)->second-=amount;
             //
             auto it = _data.cardToAmount().begin();
               while (it != _data.cardToAmount().end()) {
-                  if((*it).first==number)
-                      (*it).second+=amount;
+                  if((*it).first==number){
+                      if((*it).second>=amount){
+                         (*it).second-=amount;
+                          return true;
+                      }
+                      else return false;
+                  }
                         ++it;
               }
         }
     }
+    return false;
 }
 
 
@@ -91,8 +98,16 @@ const Account*  DataStorage::getAccountByCard(const string &number,const string&
                 return &DataStorage::_data.accounts()[i];
         }
     }
-
     return new Account();
+}
+
+const Account& DataStorage::getAccountByCardNumber(const string& number){
+    for(int i=0;i<DataStorage::_data.accounts().size();i++){
+        for(int j=0;j<DataStorage::_data.accounts()[i].cards().size();j++){
+            if((DataStorage::_data.accounts()[i].cards()[j].number()==number))
+                return DataStorage::_data.accounts()[i];
+        }
+    }
 }
 
 const double& DataStorage::getMoney(const Account& ac,const string&  number){

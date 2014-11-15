@@ -56,14 +56,18 @@ void ATM::getAmount(){
 void ATM::withdrawMoney(){
     //amount from input
     double amount=10;
-    Bank::withdrawAmoundFromCard(Operation(_currentAccount,_inputCardNumber,"",amount));
+  if(!(Bank::withdrawAmoundFromCard(Operation(_currentAccount,_inputCardNumber,"",amount)))){
+      QMessageBox::critical(0, "Withdraw error", "Insufficient amount of money!");
+  }
 }
 
 void ATM::sendMoney(){
     //amount and card number from input
     double amount=10;
     string to = "4327463724623746";
-    Bank::sendMoney(Operation(_currentAccount,_inputCardNumber,to,amount));
+    if(!Bank::sendMoney(Operation(_currentAccount,_inputCardNumber,to,amount))){
+        QMessageBox::critical(0, "Sending error", "Insufficient amount of money on your card!");
+    }
 }
 
 

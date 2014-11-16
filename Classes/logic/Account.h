@@ -7,10 +7,7 @@
 using namespace std;
 
 class Account{
-//public:
-    //class Card;
 private:
-    //class Card;
     vector<Card> _cards;
     vector <Card>::iterator Iter;
     static int _FreeId;
@@ -22,7 +19,7 @@ public:
     Account& operator=(const Account&);
     inline const vector<Card>& getCards() const{ return _cards;};
     void insertCard(const string& number,const  string& password);
-    Card& getCardByNumber(const string& number); //could be problem because of returning of reference
+    Card& getCardByNumber(const string& number);
     ~Account();
     Account();
     Account(const Account& ac);
@@ -32,8 +29,6 @@ public:
     const string& birthdate() const{return _birthdate;}
     const vector<Card>& cards() const{return _cards;}
     const int& pointId() const {return _PointId;}
-    //just for testing
-    void show();
 };
 
 bool operator==(const Account&, const Account&);

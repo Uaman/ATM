@@ -18,7 +18,4 @@ Card& Card::operator=(Card& c){
     return *this;
 }
 
-//just for testing
-void Card::show(){
-    cout<<"card number: "<<this->number()<<endl;
-}
+

@@ -28,6 +28,7 @@ Account::~Account(){
     return;
 }
 
+//returns a card by number given
 Card& Account::getCardByNumber(const string& number){
     Card res("","");
     for(int i=0;i< _cards.size();i++){
@@ -38,14 +39,7 @@ Card& Account::getCardByNumber(const string& number){
     return res;
 }
 
-//just for testing
-void Account::show(){
-    cout<<"Owner: "<<name()<<" "<<sername()<<" id= "<<_PointId<<endl;
-    for ( Iter = _cards.begin( ) ; Iter != _cards.end( ) ; Iter++ )
-        (Iter)->show();
-}
-
-
+//inserts a new card to the account
 void Account::insertCard(const string& number,const  string& password){
     (*this)._cards.push_back( Card(number,password));
 }

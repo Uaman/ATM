@@ -2,32 +2,25 @@
 #include "ATM.h"
 #include <QDebug>
 
-//ATM
+//method creates and opens main menu and inits atm data
 void ATM::startATM(){
     DataStorage::initATM();
     ms._window->show();
-    //method creates and opens main menu
 }
+
+//method checks if card exists in the system and ints current accound and input card
 bool ATM::checkCard(){
     string name =  ms.cardNumber();
     string password = ms.password();
-
-    cout<<name<<" "<<password;
-    _currentAccount = (*DataStorage::getAccountByCard(name,password));
+     _currentAccount = (*DataStorage::getAccountByCard(name,password));
 
     if(_currentAccount!=Account()){
         _inputCardNumber = name;
-
-      /*  getAmount();
-        withdrawMoney();
-        getAmount();
-        sendMoney();
-        cout<<"After: "<<DataStorage::getMoney(DataStorage::getAccountByCardNumber("4327463724623746")
-                              ,"4327463724623746");*/
-         return true;
+        return true;
     }
     return false;
 }
+
 
 ATM::ATM():_currentAccount(Account()),_inputCardNumber(""){
     connect(&ms,SIGNAL(signal_try_password()),SLOT(passwordChecker()));
@@ -58,7 +51,6 @@ void ATM::getMoneyOnScreen()
 
 void ATM::passwordChecker()
 {
-    //if(true)
     if(checkCard())
         ms.allowLogIn();
     else{
@@ -70,12 +62,13 @@ ATM::~ATM(){
     return;
 }
 
-//
+//creates operation and calls method from Bank for getting amount
 const double& ATM::getAmount(){
    Operation op(_currentAccount,_inputCardNumber,"",0);
    return Bank::getAmoundByCard(op);
 }
 
+//creates operation and calls method from Bank for withdrawing amount
 void ATM::withdrawMoney(double sum){
     //amount from input
   if(!(Bank::withdrawAmoundFromCard(Operation(_currentAccount,_inputCardNumber,"",sum)))){
@@ -84,11 +77,9 @@ void ATM::withdrawMoney(double sum){
 
 }
 
+//creates operation and calls method from Bank for sending amount
 void ATM::sendMoney(QString to,double amount){
-    //amount and card number from input
-//    double amount=10;
-//    string to = "4327463724623746";
-    if(!Bank::sendMoney(Operation(_currentAccount,_inputCardNumber,to.toStdString(),amount))){
+   if(!Bank::sendMoney(Operation(_currentAccount,_inputCardNumber,to.toStdString(),amount))){
         QMessageBox::critical(0, "Sending error", "Insufficient amount of money on your card!");
     }else ms.onSuccssesfulScreen();
 }

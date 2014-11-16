@@ -19,13 +19,13 @@ MainWindowFrame::MainWindowFrame(QWidget *parent) :
     _cardLine->show();
     connect(_cardLine,&MyEditLine::focused,this,&MainWindowFrame::editingCardLine);
     connect(_passLine,&MyEditLine::focused,this,&MainWindowFrame::editingPassLine);
-    connect(_cardLine,SIGNAL(editingFinished()),SLOT(on_lineEdit_editingFinished()));
-    connect(_passLine,SIGNAL(editingFinished()),SLOT(on_lineEdit_2_editingFinished()));
     ui->setupUi(this);
     _cardLine->move(ui->label_2->x(),ui->label_2->y()+37);
     _passLine->move(ui->label_3->x(),ui->label_3->y()+30);
     _passLine->setEchoMode(QLineEdit::EchoMode::Password);
 }
+
+
 
 void MainWindowFrame::edittingLine()
 {
@@ -55,27 +55,19 @@ void MainWindowFrame::on_pushButton_clicked()
     emit signalLogInClicked();
 }
 
-const QString& MainWindowFrame::getCardNumber() const
+const MyEditLine* MainWindowFrame::getCardNumber() const
 {
-    return _cardNumb;
+    return _cardLine;
 }
 
-const QString& MainWindowFrame::getPassword() const
+const MyEditLine* MainWindowFrame::getPassword() const
 {
-    return _pass;
+    return _passLine;
 }
 
-void MainWindowFrame::on_lineEdit_editingFinished()
-{
-    _cardNumb=_cardLine->text();
-    emit loginEntered();
-}
 
-void MainWindowFrame::on_lineEdit_2_editingFinished()
-{
-    _pass=_passLine->text();
-    emit passwordEntered();
-}
+
+
 
 
 //press 1

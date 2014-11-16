@@ -17,13 +17,12 @@ MenuStates::MenuStates(QWidget *parent):
     _window(new MainWindow(parent)),
     _currentFrame(nullptr),
     _cardNumber(""),
-    _password("")
+    _password(""),
+    _currentMoney("")
 {
     connect(_window,SIGNAL(closeWindow()),SLOT(closingWindow()));
     MainWindowFrame* winFr=new MainWindowFrame();
     connect(winFr,SIGNAL(signalLogInClicked()),SLOT(signalLogInClicked()));
-    connect(winFr,SIGNAL(loginEntered()),SLOT(cardNumberEntered()));
-    connect(winFr,SIGNAL(passwordEntered()),SLOT(passwordEntered()));
     _currentFrame=winFr;
     winFr=0;
     _window->addSonFrame(_currentFrame);
@@ -35,8 +34,13 @@ void MenuStates::closingWindow()
     _window->close();
 }
 
+//after clicking log in
 void MenuStates::signalLogInClicked(void)
 {
+    MainWindowFrame* menu=static_cast<MainWindowFrame*>(_currentFrame);
+    _cardNumber=menu->getCardNumber()->text();
+    _password=menu->getPassword()->text();
+    menu=0;
     emit signal_try_password();
 }
 
@@ -72,16 +76,13 @@ void MenuStates::balanceOnScreen()
     MoneyOnScreenFrame* onScreen= new MoneyOnScreenFrame();
     connect(onScreen,SIGNAL(backToMainMenu()),SLOT(backToMainMenu()));
     connect(onScreen,SIGNAL(goToTakingMoney()),SLOT(backOnTakingMoneyWindow()));
+    emit getMoneyOnScreen();
+    onScreen->getLine()->setText(_currentMoney);
     _currentFrame=onScreen;
     _window->addSonFrame(_currentFrame);
 }
 
-void MenuStates::cardNumberEntered()
-{
-    MainWindowFrame* mFr=static_cast<MainWindowFrame*>(_currentFrame);
-    _cardNumber=mFr->getCardNumber();
-    mFr=0;
-}
+
 
 
 //Method for working with taking money function
@@ -118,9 +119,20 @@ void MenuStates::anotherSum()
     delete _currentFrame;
     AnotherSumFrame* another=new AnotherSumFrame();
     connect(another,SIGNAL(signalBackOnTackingMoneyFrame()),SLOT(backOnTakingMoneyWindow()));
+    connect(another,SIGNAL(takeAnotherSum()),SLOT(tryToTakeAnotherSum()));
     _currentFrame=another;
     another=0;
     _window->addSonFrame(_currentFrame);
+}
+
+//after preasing okay we trying to take another
+//sum of money(from lineEdit)
+void MenuStates::tryToTakeAnotherSum()
+{
+    AnotherSumFrame* another=static_cast<AnotherSumFrame*>(_currentFrame);
+    _takingOutSum=another->getMoneyFromLine();
+    emit takeMoney();
+    another=0;
 }
 
 
@@ -137,21 +149,28 @@ void MenuStates::backOnTakingMoneyWindow()
     _window->addSonFrame(_currentFrame);
 }
 
-
+//taking out Money
 void MenuStates::takeOutSomeSum()
 {
     //you can receive the sum from
     TakingMoney* monyTaker=static_cast<TakingMoney*>(_currentFrame);
-    /*here it is*/monyTaker->getSumToTakeOut();
+    _takingOutSum=monyTaker->getSumToTakeOut();
     monyTaker=0;
+    emit takeMoney();
+    backToMainMenu();
 }
 
-void MenuStates::passwordEntered()
+const int &MenuStates::getTakingOutSum()
 {
-    MainWindowFrame* mFr=static_cast<MainWindowFrame*>(_currentFrame);
-    _password=mFr->getPassword();
-    mFr=0;
+    return _takingOutSum;
 }
+
+void MenuStates::setCurrentMoney(QString money)
+{
+    _currentMoney=money;
+}
+
+
 
 MenuStates::~MenuStates()
 {

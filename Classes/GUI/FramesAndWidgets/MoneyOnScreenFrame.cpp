@@ -11,6 +11,11 @@ MoneyOnScreenFrame::MoneyOnScreenFrame(QWidget *parent) :
     //ui->label->setText("HELLO");
 }
 
+QLabel* MoneyOnScreenFrame::getLine()
+{
+    return  ui->label_2;
+}
+
 MoneyOnScreenFrame::~MoneyOnScreenFrame()
 {
     delete ui;

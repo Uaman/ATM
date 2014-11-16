@@ -4,6 +4,7 @@
 #define MONEYONSCREENFRAME_H
 
 #include <QFrame>
+#include <QLabel>
 
 namespace Ui {
 class MoneyOnScreenFrame;
@@ -16,6 +17,7 @@ class MoneyOnScreenFrame : public QFrame
 public:
     explicit MoneyOnScreenFrame(QWidget *parent = 0);
     ~MoneyOnScreenFrame();
+    QLabel* getLine();
 signals:
     void backToMainMenu();
     void goToTakingMoney();

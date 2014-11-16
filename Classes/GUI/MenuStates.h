@@ -16,12 +16,16 @@ public:
     inline const std::string cardNumber() const {return _cardNumber.toStdString();}
     inline const std::string password() const {return _password.toStdString();}
     void allowLogIn();
+    void setCurrentMoney(QString money);
+    const int& getTakingOutSum();
 
 
     ~MenuStates();
 
 signals:
     void signal_try_password();
+    void getMoneyOnScreen();
+    void takeMoney();
 
 public slots:
     //Base window
@@ -29,8 +33,6 @@ public slots:
 
     //Main window(Logining) slots
     void signalLogInClicked(void);
-    void cardNumberEntered(void);
-    void passwordEntered(void);
 
     //Main menu slots
     void signalPayClicked(void);
@@ -47,13 +49,15 @@ public slots:
 
     //AnotherSumFrame slots
     void backOnTakingMoneyWindow();
+    void tryToTakeAnotherSum();
 
 
 private:
     QString _cardNumber;
     QString _password;
     QFrame* _currentFrame;
-
+    QString _currentMoney;
+    int _takingOutSum;
 };
 
 #endif // MENUSTATES_H

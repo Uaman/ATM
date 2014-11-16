@@ -17,20 +17,14 @@ class MainWindowFrame : public QFrame
 public:
     explicit MainWindowFrame(QWidget *parent = 0);
     ~MainWindowFrame();
-    const QString &getCardNumber()const;
-    const QString &getPassword()const;
+    const MyEditLine* getCardNumber()const;
+    const MyEditLine* getPassword()const;
 signals:
     void signalLogInClicked(void);
-    void loginEntered(void);
-    void passwordEntered(void);
 public slots:
     void on_pushButton_clicked();
 private slots:
     void edittingLine();
-
-    void on_lineEdit_editingFinished();
-
-    void on_lineEdit_2_editingFinished();
 
     void editingCardLine();
 

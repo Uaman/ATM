@@ -27,12 +27,13 @@ signals:
         bool checkCard();
         ATM();
         ~ATM();
-        void getAmount();
-        void withdrawMoney();
+        const double &getAmount();
+        void withdrawMoney(double sum);
         void sendMoney();
 public slots:
+        void takeMoneySlot();
         void passwordChecker();
-
+        void getMoneyOnScreen();
 };
 
 //class  ATM::Operation{

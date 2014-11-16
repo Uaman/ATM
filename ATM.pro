@@ -28,7 +28,8 @@ SOURCES += \
     Classes/GUI/FramesAndWidgets/SendingMoneyFrame.cpp \
     Classes/GUI/FramesAndWidgets/MyEditLine.cpp \
     Classes/logic/Bank.cpp \
-    Classes/logic/Operation.cpp
+    Classes/logic/Operation.cpp \
+    Classes/GUI/FramesAndWidgets/SuccessfulFrame.cpp
 
 
 HEADERS += \
@@ -48,7 +49,8 @@ HEADERS += \
     Classes/GUI/FramesAndWidgets/SendingMoneyFrame.h \
     Classes/GUI/FramesAndWidgets/MyEditLine.h \
     Classes/logic/Bank.h \
-    Classes/logic/Operation.h
+    Classes/logic/Operation.h \
+    Classes/GUI/FramesAndWidgets/SuccessfulFrame.h
 
 FORMS += \
     Classes/GUI/FramesAndWidgets/MainWindow.ui \
@@ -57,6 +59,7 @@ FORMS += \
     Classes/GUI/FramesAndWidgets/TakingMoney.ui \
     Classes/GUI/FramesAndWidgets/AnotherSumFrame.ui \
     Classes/GUI/FramesAndWidgets/MoneyOnScreenFrame.ui \
-    Classes/GUI/FramesAndWidgets/SendingMoneyFrame.ui
+    Classes/GUI/FramesAndWidgets/SendingMoneyFrame.ui \
+    Classes/GUI/FramesAndWidgets/SuccessfulFrame.ui
 
 

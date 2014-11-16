@@ -14,10 +14,14 @@ class SendingMoneyFrame : public QFrame
 
 public:
     explicit SendingMoneyFrame(QWidget *parent = 0);
+    QString getCardNumber();
+    double getMoney();
     ~SendingMoneyFrame();
 signals:
     //void redirecting to MainMenuFrame
     void backToMainMenu();
+    //send money
+    void sendMoney();
 //    //editLine
 //    void editLine();
 public slots:
@@ -62,6 +66,8 @@ private slots:
     void on_pushButton_12_clicked();
 
     void on_pushButton_11_clicked();
+
+    void on_pushButton_clicked();
 
 private:
     Ui::SendingMoneyFrame *ui;

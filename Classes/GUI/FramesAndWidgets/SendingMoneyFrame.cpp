@@ -167,3 +167,18 @@ void SendingMoneyFrame::clearLast()
     worker->setText(string);
     worker=0;
 }
+
+void SendingMoneyFrame::on_pushButton_clicked()
+{
+    emit sendMoney();
+}
+
+QString SendingMoneyFrame::getCardNumber()
+{
+    return _cardNumber->text();
+}
+
+double SendingMoneyFrame::getMoney()
+{
+    return _password->text().toDouble();
+}

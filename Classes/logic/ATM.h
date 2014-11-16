@@ -29,9 +29,8 @@ signals:
         ~ATM();
         const double &getAmount();
         void withdrawMoney(double sum);
-        void sendMoney(QString to,double amount);
+        void sendMoney();
 public slots:
-        void sendMoneyOnCard();
         void takeMoneySlot();
         void passwordChecker();
         void getMoneyOnScreen();

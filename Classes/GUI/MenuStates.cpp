@@ -103,6 +103,7 @@ void MenuStates::balanceOnScreen()
     onScreen->getLine()->setText(_currentMoney);
     _currentFrame=onScreen;
     _window->addSonFrame(_currentFrame);
+    onScreen=0;
 }
 
 //redirect to succesful frame
@@ -189,7 +190,6 @@ void MenuStates::takeOutSomeSum()
     _takingOutSum=monyTaker->getSumToTakeOut();
     monyTaker=0;
     emit takeMoney();
-    backToMainMenu();
 }
 
 const int &MenuStates::getTakingOutSum()

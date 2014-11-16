@@ -12,3 +12,8 @@ SuccessfulFrame::~SuccessfulFrame()
 {
     delete ui;
 }
+
+void SuccessfulFrame::on_commandLinkButton_clicked()
+{
+    emit toMainMenu();
+}

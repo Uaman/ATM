@@ -33,7 +33,14 @@ ATM::ATM():_currentAccount(Account()),_inputCardNumber(""){
     connect(&ms,SIGNAL(signal_try_password()),SLOT(passwordChecker()));
     connect(&ms,SIGNAL(getMoneyOnScreen()),SLOT(getMoneyOnScreen()));
     connect(&ms,SIGNAL(takeMoney()),SLOT(takeMoneySlot()));
+    connect(&ms,SIGNAL(sendMoney()),SLOT(sendMoneyOnCard()));
     return;
+}
+
+//slot sending money on card
+void ATM::sendMoneyOnCard()
+{
+    sendMoney(ms.getCardToSend(),ms.getMoneyToSend());
 }
 
 //taking money from _currentAccount card
@@ -71,15 +78,19 @@ const double& ATM::getAmount(){
 
 void ATM::withdrawMoney(double sum){
     //amount from input
-    //double amount=10;
-    Bank::withdrawAmoundFromCard(Operation(_currentAccount,_inputCardNumber,"",sum));
+  if(!(Bank::withdrawAmoundFromCard(Operation(_currentAccount,_inputCardNumber,"",sum)))){
+      QMessageBox::critical(0, "Withdraw error", "Insufficient amount of money!");
+  }else ms.onSuccssesfulScreen();
+
 }
 
-void ATM::sendMoney(){
+void ATM::sendMoney(QString to,double amount){
     //amount and card number from input
-    double amount=10;
-    string to = "4327463724623746";
-    Bank::sendMoney(Operation(_currentAccount,_inputCardNumber,to,amount));
+//    double amount=10;
+//    string to = "4327463724623746";
+    if(!Bank::sendMoney(Operation(_currentAccount,_inputCardNumber,to.toStdString(),amount))){
+        QMessageBox::critical(0, "Sending error", "Insufficient amount of money on your card!");
+    }else ms.onSuccssesfulScreen();
 }
 
 

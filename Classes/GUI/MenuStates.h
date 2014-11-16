@@ -18,6 +18,8 @@ public:
     void allowLogIn();
     void setCurrentMoney(QString money);
     const int& getTakingOutSum();
+    QString getCardToSend();
+    double getMoneyToSend();
 
 
     ~MenuStates();
@@ -26,6 +28,7 @@ signals:
     void signal_try_password();
     void getMoneyOnScreen();
     void takeMoney();
+    void sendMoney();
 
 public slots:
     //Base window
@@ -45,11 +48,14 @@ public slots:
     void backToMainMenu();
 
     //Sending money slots
-
+    void sendSomeMoney();
 
     //AnotherSumFrame slots
     void backOnTakingMoneyWindow();
     void tryToTakeAnotherSum();
+
+    //Succesful withdraw
+    void onSuccssesfulScreen();
 
 
 private:
@@ -58,6 +64,8 @@ private:
     QFrame* _currentFrame;
     QString _currentMoney;
     int _takingOutSum;
+//    double _moneyToSend;
+//    QString _cardToSend;
 };
 
 #endif // MENUSTATES_H

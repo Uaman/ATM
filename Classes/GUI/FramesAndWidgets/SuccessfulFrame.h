@@ -14,6 +14,12 @@ class SuccessfulFrame : public QFrame
 public:
     explicit SuccessfulFrame(QWidget *parent = 0);
     ~SuccessfulFrame();
+signals:
+    //signal going to main menu
+    void toMainMenu();
+
+private slots:
+    void on_commandLinkButton_clicked();
 
 private:
     Ui::SuccessfulFrame *ui;

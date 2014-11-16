@@ -11,6 +11,7 @@
 #include "../logic/ATM.h"
 #include "../logic/DataStorage.h"
 #include "FramesAndWidgets/AnotherSumFrame.h"
+#include "FramesAndWidgets/SuccessfulFrame.h"
 #include <iostream>
 
 MenuStates::MenuStates(QWidget *parent):
@@ -64,9 +65,31 @@ void MenuStates::onSendingMoney()
     delete _currentFrame;
     SendingMoneyFrame* send=new SendingMoneyFrame();
     connect(send,SIGNAL(backToMainMenu()),SLOT(backToMainMenu()));
+    connect(send,SIGNAL(sendMoney()),SLOT(sendSomeMoney()));
     _currentFrame=send;
     send=0;
     _window->addSonFrame(_currentFrame);
+}
+
+QString MenuStates::getCardToSend()
+{
+    SendingMoneyFrame* sender=static_cast<SendingMoneyFrame*>(_currentFrame);
+    QString cardNumb=sender->getCardNumber();
+    sender=0;
+    return cardNumb;
+}
+
+double MenuStates::getMoneyToSend()
+{
+    SendingMoneyFrame* sender=static_cast<SendingMoneyFrame*>(_currentFrame);
+    double amount=sender->getMoney();
+    sender=0;
+    return amount;
+}
+
+void MenuStates::sendSomeMoney()
+{
+    emit sendMoney();
 }
 
 //redirecting to MoneyOnScreenFrame
@@ -82,7 +105,16 @@ void MenuStates::balanceOnScreen()
     _window->addSonFrame(_currentFrame);
 }
 
-
+//redirect to succesful frame
+void MenuStates::onSuccssesfulScreen()
+{
+    delete _currentFrame;
+    SuccessfulFrame* success=new SuccessfulFrame();
+    connect(success,SIGNAL(toMainMenu()),SLOT(backToMainMenu()));
+    _currentFrame=success;
+    _window->addSonFrame(_currentFrame);
+    success=0;
+}
 
 
 //Method for working with taking money function

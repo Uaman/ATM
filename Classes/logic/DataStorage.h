@@ -25,7 +25,7 @@ class DataStorage{
 
         static const double& getMoney(const Account& ac,const string&  number);
         static const Account* getAccountByCard(const string& number,const string& password);
-        static const Account& getAccountByCardNumber(const string& number);
+        static const Account* getAccountByCardNumber(const string& number);
         static void putMoney(const Account& ac,const string&  number, double  amount);
         static bool withdrawMoney(const Account& ac, const string&  number,const double& amount);
         static void addCard(const Account& ac,const string&  number, const string& pin);

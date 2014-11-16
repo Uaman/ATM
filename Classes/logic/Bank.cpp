@@ -12,12 +12,16 @@ bool Bank::withdrawAmoundFromCard(const Operation& oc){
 }
 
 //uses method from DataStorage class for snding money from one card to another
-bool Bank::sendMoney(const Operation& oc){
-   if(DataStorage::withdrawMoney(oc._accountFrom,oc._numberFrom,oc._amount)){
-        DataStorage::putMoney((DataStorage::getAccountByCardNumber(oc._numberTo)),oc._numberTo,oc._amount);
-        return true;
+int Bank::sendMoney(const Operation& oc){
+   Account ac = (*DataStorage::getAccountByCardNumber(oc._numberTo));
+   if(ac==Account()){
+       return 2;
+   }
+   else if(DataStorage::withdrawMoney(oc._accountFrom,oc._numberFrom,oc._amount)){
+        DataStorage::putMoney(ac,oc._numberTo,oc._amount);
+        return 1;
     }
-    return false;
+    return 3;
 }
 
 

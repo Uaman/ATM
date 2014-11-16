@@ -79,9 +79,20 @@ void ATM::withdrawMoney(double sum){
 
 //creates operation and calls method from Bank for sending amount
 void ATM::sendMoney(QString to,double amount){
-   if(!Bank::sendMoney(Operation(_currentAccount,_inputCardNumber,to.toStdString(),amount))){
-        QMessageBox::critical(0, "Sending error", "Insufficient amount of money on your card!");
-    }else ms.onSuccssesfulScreen();
+    int code = Bank::sendMoney(Operation(_currentAccount,_inputCardNumber,to.toStdString(),amount));
+    switch(code){
+        case 1:
+           ms.onSuccssesfulScreen();
+           break;
+        case 2:
+           QMessageBox::critical(0, "Sending error", "Incorrect card number of recipient!");
+           break;
+        case 3:
+           QMessageBox::critical(0, "Sending error", "Insufficient amount of money on your card!");
+           break;
+        default:
+           break;
+    }
 }
 
 

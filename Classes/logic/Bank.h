@@ -22,7 +22,7 @@ public:
     }
   static const double& getAmoundByCard(const Operation&);
   static bool withdrawAmoundFromCard(const Operation& oc);
-  static bool sendMoney(const Operation& oc);
+  static int sendMoney(const Operation& oc);
 };
 
 #endif // BANK_H

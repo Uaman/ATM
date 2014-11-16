@@ -31,7 +31,7 @@ Account::~Account(){
 //returns a card by number given
 Card& Account::getCardByNumber(const string& number){
     Card res("","");
-    for(int i=0;i< _cards.size();i++){
+    for(int i=0;i<static_cast<int>(_cards.size());i++){
             if(_cards[i].number()==number){
                 return _cards[i];
             }

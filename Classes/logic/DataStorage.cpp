@@ -44,7 +44,7 @@ void DataStorage::initATM(){
 
 //method adds a new card to account
 void DataStorage::addCard(const Account& ac,const string&  number, const string& pin){
-    for(int i=0;i<DataStorage::_data.accounts().size();i++){
+    for(int i=0;i<static_cast<int>(DataStorage::_data.accounts().size());i++){
         if(DataStorage::_data.accounts()[i]==ac){
             DataStorage::_data.accounts()[i].insertCard(number,pin);
         }
@@ -54,7 +54,7 @@ void DataStorage::addCard(const Account& ac,const string&  number, const string&
 
 //method puts money on the card
 void DataStorage::putMoney(const Account& ac,const string&  number, double  amount){
-    for(int i=0;i<DataStorage::_data.accounts().size();i++){
+    for(int i=0;i<static_cast<int>(DataStorage::_data.accounts().size());i++){
         if(DataStorage::_data.accounts()[i]==ac){
              auto it = _data.cardToAmount().begin();
               while (it != _data.cardToAmount().end()) {
@@ -69,7 +69,7 @@ void DataStorage::putMoney(const Account& ac,const string&  number, double  amou
 
 //method withdraws money from the card if there is enough money on the card
 bool DataStorage::withdrawMoney(const Account& ac,const string&  number,const double& amount){
-    for(int i=0;i<DataStorage::_data.accounts().size();i++){
+    for(int i=0;i<static_cast<int>(DataStorage::_data.accounts().size());i++){
         if(DataStorage::_data.accounts()[i]==ac){
             auto it = _data.cardToAmount().begin();
               while (it != _data.cardToAmount().end()) {
@@ -90,8 +90,8 @@ bool DataStorage::withdrawMoney(const Account& ac,const string&  number,const do
 
 //method returns account if card with given password and number exists
 const Account*  DataStorage::getAccountByCard(const string &number,const string& password){
-    for(int i=0;i<DataStorage::_data.accounts().size();i++){
-        for(int j=0;j<DataStorage::_data.accounts()[i].cards().size();j++){
+    for(int i=0;i<static_cast<int>(DataStorage::_data.accounts().size());i++){
+        for(int j=0;j<static_cast<int>(DataStorage::_data.accounts()[i].cards().size());j++){
             if((DataStorage::_data.accounts()[i].cards()[j].number()==number)&&(DataStorage::_data.accounts()[i].cards()[j].password()==md5(password)))
                 return &DataStorage::_data.accounts()[i];
         }
@@ -100,18 +100,19 @@ const Account*  DataStorage::getAccountByCard(const string &number,const string&
 }
 
 //returns account by card number
-const Account& DataStorage::getAccountByCardNumber(const string& number){
-    for(int i=0;i<DataStorage::_data.accounts().size();i++){
+const Account* DataStorage::getAccountByCardNumber(const string& number){
+    for(int i=0;i<static_cast<int>(DataStorage::_data.accounts().size());i++){
         for(int j=0;j<static_cast<int>(DataStorage::_data.accounts()[i].cards().size());j++){
             if((DataStorage::_data.accounts()[i].cards()[j].number()==number))
-                return DataStorage::_data.accounts()[i];
+                return (&DataStorage::_data.accounts()[i]);
         }
     }
+    return new Account();
 }
 
 //returns money of the card
 const double& DataStorage::getMoney(const Account& ac,const string&  number){
-    for(int i=0;i<DataStorage::_data.accounts().size();i++){
+    for(int i=0;i<static_cast<int>(DataStorage::_data.accounts().size());i++){
         if(DataStorage::_data.accounts()[i]==ac){
              auto it = _data.cardToAmount().begin();
               while (it != _data.cardToAmount().end()) {

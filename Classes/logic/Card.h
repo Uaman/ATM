@@ -8,6 +8,7 @@ class Card{
     private:
         string  _number;
         string  _password;
+
     public:
         Card();
         ~Card(){};

@@ -21,7 +21,7 @@ public:
         return _instance;
     }
   static const double& getAmoundByCard(const Operation&);
-  static bool withdrawAmoundFromCard(const Operation& oc);
+  static int withdrawAmoundFromCard(const Operation& oc);
   static int sendMoney(const Operation& oc);
 };
 

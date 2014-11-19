@@ -71,12 +71,25 @@ const double& ATM::getAmount(){
 //creates operation and calls method from Bank for withdrawing amount
 void ATM::withdrawMoney(double sum){
     //amount from input
-  if(!(Bank::withdrawAmoundFromCard(Operation(_currentAccount,_inputCardNumber,"",sum)))){
-      QMessageBox::critical(0, "Withdraw error", "Insufficient amount of money!");
-  }else ms.onSuccssesfulScreen();
+    int code =  Bank::withdrawAmoundFromCard(Operation(_currentAccount,_inputCardNumber,"",sum));
+    switch(code){
+        case 1:
+            QMessageBox::critical(0, "Withdraw error", "Amount must be positive!");
+            break;
+        case 2:
+           QMessageBox::critical(0, "Withdraw error", "You have not got this sum!");
+           break;
+        case 3:
+           ms.onSuccssesfulScreen();
+           break;
+        case 4:
+          QMessageBox::critical(0, "Withdraw error", "Insufficient amount of money!");
+           break;
+        default:
+           break;
+    }
 
-}
-
+ }
 //creates operation and calls method from Bank for sending amount
 void ATM::sendMoney(QString to,double amount){
     int code = Bank::sendMoney(Operation(_currentAccount,_inputCardNumber,to.toStdString(),amount));
@@ -89,6 +102,12 @@ void ATM::sendMoney(QString to,double amount){
            break;
         case 3:
            QMessageBox::critical(0, "Sending error", "Insufficient amount of money on your card!");
+           break;
+        case 4:
+           QMessageBox::critical(0, "Sending error", "Amount must be positive!");
+           break;
+        case 5:
+           QMessageBox::critical(0, "Sending error", "You can not send to your card!");
            break;
         default:
            break;

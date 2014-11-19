@@ -11,11 +11,9 @@ const double& Bank::getAmoundByCard(const Operation& oc) {
 int Bank::withdrawAmoundFromCard(const Operation& oc){
     if(oc._amount<=0)
         return 1;
-    if (DataStorage::withdrawMoney(oc._accountFrom,oc._numberFrom,oc._amount));
+    if (DataStorage::withdrawMoney(oc._accountFrom,oc._numberFrom,oc._amount))
         return 3;
-    if (!DataStorage::withdrawMoney(oc._accountFrom,oc._numberFrom,oc._amount));
-        return 4;
-
+    return 4;
 }
 
 //uses method from DataStorage class for snding money from one card to another

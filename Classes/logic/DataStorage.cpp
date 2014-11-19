@@ -74,9 +74,6 @@ bool DataStorage::withdrawMoney(const Account& ac,const string&  number,const do
             auto it = _data.cardToAmount().begin();
               while (it != _data.cardToAmount().end()) {
                   if((*it).first==number){
-                     /* if((*it).second<amount){
-                          return false;
-                      }*/
                       if((*it).second>=amount){
                          (*it).second-=amount;
                           return true;

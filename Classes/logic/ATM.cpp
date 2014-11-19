@@ -76,17 +76,14 @@ void ATM::withdrawMoney(double sum){
         case 1:
             QMessageBox::critical(0, "Withdraw error", "Amount must be positive!");
             break;
-        case 2:
-           QMessageBox::critical(0, "Withdraw error", "You have not got this sum!");
-           break;
         case 3:
-           ms.onSuccssesfulScreen();
-           break;
+            ms.onSuccssesfulScreen();
+            break;
         case 4:
-          QMessageBox::critical(0, "Withdraw error", "Insufficient amount of money!");
-           break;
+            QMessageBox::critical(0, "Withdraw error", "Insufficient amount of money!");
+            break;
         default:
-           break;
+            break;
     }
 
  }

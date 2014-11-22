@@ -29,10 +29,16 @@ MenuStates::MenuStates(QWidget *parent):
     _window->addSonFrame(_currentFrame);
 }
 
-//closing window
+//Log out
 void MenuStates::closingWindow()
 {
-    _window->close();
+    emit signal_Log_out();
+    delete _currentFrame;
+    MainWindowFrame* winFr=new MainWindowFrame();
+    connect(winFr,SIGNAL(signalLogInClicked()),SLOT(signalLogInClicked()));
+    _currentFrame=winFr;
+    winFr=0;
+    _window->addSonFrame(_currentFrame);
 }
 
 //after clicking log in

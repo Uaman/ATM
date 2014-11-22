@@ -29,6 +29,7 @@ signals:
     void getMoneyOnScreen();
     void takeMoney();
     void sendMoney();
+    void signal_Log_out();
 
 public slots:
     //Base window

@@ -27,6 +27,13 @@ ATM::ATM():_currentAccount(Account()),_inputCardNumber(""){
     connect(&ms,SIGNAL(getMoneyOnScreen()),SLOT(getMoneyOnScreen()));
     connect(&ms,SIGNAL(takeMoney()),SLOT(takeMoneySlot()));
     connect(&ms,SIGNAL(sendMoney()),SLOT(sendMoneyOnCard()));
+    connect(&ms,SIGNAL(signal_Log_out()),SLOT(logOut()));
+    return;
+}
+
+//Log out slot
+void ATM::logOut()
+{
     return;
 }
 

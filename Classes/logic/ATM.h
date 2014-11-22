@@ -35,6 +35,7 @@ public slots:
         void takeMoneySlot();
         void passwordChecker();
         void getMoneyOnScreen();
+        void logOut();
 };
 
 //class  ATM::Operation{
